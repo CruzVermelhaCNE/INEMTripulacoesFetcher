@@ -32,7 +32,7 @@ var worksheet = workbook.addWorksheet('INFO');
         __doPostBack('ctl00$MainContent$listTripulantes', 'Page$Last');
     });
     await page.waitForSelector('#gridview')
-    const number_of_pages = await page.evaluate(() => document.querySelector('.clsFormLabel').innerHTML);
+    const number_of_pages = await page.evaluate(() => (document.querySelector('.clsFormLabel'))?document.querySelector('.clsFormLabel').innerHTML:1);
     process.stdout.write("Número total de páginas: " + number_of_pages);
     for (let i = 1; i <= number_of_pages; i++) {
         await page.evaluate((i) => {
@@ -80,7 +80,6 @@ var worksheet = workbook.addWorksheet('INFO');
         for (let j = 0; j < num_altrows; j++) {
             await aux_function(".clsAlternatingRow", j);
         }
-        process.stdout.write("Página " + i + " completa");
     }
     //Writing headers
     worksheet.cell(1, 1).string('Nome');
@@ -99,6 +98,7 @@ var worksheet = workbook.addWorksheet('INFO');
         worksheet.cell(current_xlsx_row, 6).link(element.link_pdf);
         current_xlsx_row++;
     });
-    workbook.write("ficheiros/"+name + '.xlsx');
+    let filename = name.replace(" ","-");
+    workbook.write("ficheiros/"+filename + '.xlsx');
     await browser.close();
 })();
