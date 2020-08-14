@@ -1,13 +1,13 @@
-# INEM Tripulações Fetcher
+# INEM Crew Members Fetcher
 
 ## Why we did this
 
-There is no direct export to XLSX
+There is no direct way to export to XLSX,
 
-## Why is this so easy to export
+## Why is this so easy to do
 
-We don't know. We found more flaws way more serious.
+We don't know.
 
-# Notice to INEM
+# INEM
 
-Please secure your websites and when you are doing it add a XLSX/CSV export to it.
+Please secure your website. When doing it please a direct way to export a XLSX.
