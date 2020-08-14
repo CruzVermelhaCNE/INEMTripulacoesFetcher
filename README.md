@@ -10,4 +10,4 @@ We don't know.
 
 # INEM
 
-Please secure your website. When doing it please a direct way to export a XLSX.
+Please secure your website. When you are doing it please add a direct way to export a XLSX.
